@@ -1,0 +1,43 @@
+<section id="todoContent">
+
+  <div>
+    <span style="color:#fff;margin-left:60px;font-size:1.5em;">Welcome <span style="color:sandybrown"> {{ currentUser.firstname }}</span></span>
+  </div>
+
+  <!--Content-->
+  <div class="container" style="border: 1px solid rgba(236, 236, 236, 0.6);padding: 25px;">
+    <div class="addTodo">
+          <input type="text" name="newTask" placeholder="add new task..." class="newTaskInput" ng-model="newTodoList">
+          <button type="submit" name="addTask" class="newTaskButton btn" ng-disabled="myForm.addTask.$invalid" ng-click="newTask()">New task!</button>
+    </div> <!--addTodo-->
+    <hr/>
+    <h3 style="color: #ffffff;font-family: Georgia,Serif;margin-left: -1000px">My Tasks</h3>
+
+    <!--List Todos-->
+    <table class="table">
+      <thead>
+      <tr>
+        <th> </th> <!--checkbox-->
+        <th>#</th> <!--index-->
+        <th>Task</th>
+        <th>Date added</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody >
+<!---->
+      <tr class="done-{{todo.done}}" ng-repeat="(key, todo) in todoList">
+        <td> <input type="checkbox" ng-model="todo.done"> </td>
+        <td>{{$index + 1}}</td>
+        <td>{{ todo.task }}</td>
+        <td>{{ todo.date | date:'medium' }}</td>
+        <td>
+          <button ng-click="deleteTask(key)" class="btn-danger"> <i class="glyphicon glyphicon-trash"></i> </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div> <!--conteiner-fluid-->
+
+</section>
