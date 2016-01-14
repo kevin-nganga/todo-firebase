@@ -1,4 +1,17 @@
 
+.navbar-default{
+  background-color: rgba(0, 0, 0, 0.43) !important;
+  border-color: rgba(236, 236, 236, 0.75) !important;
+}
+
+ul li a{
+  color: #fff !important;
+}
+
+.navbar-default .navbar-brand{
+  color: #fff !important;
+}
+
 .newTaskInput{
   height: 40px !important;
   border: 1px solid #ddd !important;
